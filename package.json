@@ -4,8 +4,8 @@
   "description": "Peer Recognition system written with CQRS and Event Sourcing",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watchAll",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "build": "tsc",
     "build:watch": "onchange 'src/**/*.ts' -- npm run build",
     "view:coverage": "serve coverage/lcov-report",
