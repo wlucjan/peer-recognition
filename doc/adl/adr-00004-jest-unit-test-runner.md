@@ -1,4 +1,4 @@
-# ADR 2: Jest as test runner for unit tests
+# ADR 4: Jest as test runner for unit tests
 
 ## Status
 
@@ -36,4 +36,4 @@ Tape - very simple testing framework, not popular. Build with simplicity in mind
 
 ## Tags
 
-tests process automation
+tests process automation code

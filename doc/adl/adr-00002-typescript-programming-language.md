@@ -1,4 +1,4 @@
-# TypeScript as the main programming language
+# ADR 2: TypeScript as the main programming language
 
 ## Status
 
@@ -17,3 +17,7 @@ We will use TypeScript [https://www.typescriptlang.org](https://www.typescriptla
 
 TypeScript as strongly typed OOP language allows for clear structure and better documentability of the code through contracts clearly enforced by types.
 Access to data types and structures unavailable in plain Javascript like enums, generics or possibility to define new type aliases.
+
+## Tags
+
+language code
