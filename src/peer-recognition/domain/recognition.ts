@@ -1,19 +1,21 @@
+import { Peer } from "./peer";
+
 export class Recognition {
   private _givenAt: Date;
   constructor(
-    private _giverId: string,
-    private _receiverId: string,
+    private _giver: Peer,
+    private _receiver: Peer,
     private _reason: string
   ) {
     this._givenAt = new Date();
   }
 
-  get giverId(): string {
-    return this._giverId;
+  get giver(): Peer {
+    return this._giver;
   }
 
-  get receiverId(): string {
-    return this._receiverId;
+  get receiver(): Peer {
+    return this._receiver;
   }
 
   get reason(): string {
@@ -22,5 +24,9 @@ export class Recognition {
 
   get givenAt(): Date {
     return this._givenAt;
+  }
+
+  boost(booster: Peer) {
+    return new Recognition(booster, this.receiver, this.reason);
   }
 }
