@@ -1,0 +1,26 @@
+@startuml
+actor User
+autoactivate on
+User -> PeerRecognitionService: recognise(PeerRecognitionRequest)
+
+PeerRecognitionService -> PeerRepository: findOne(giverId)
+return Peer
+
+PeerRecognitionService -> PeerRepository: findOne(receiverId)
+return Peer
+
+PeerRecognitionService -> OrganisationRepository: findOne(giverOrganisationId)
+return Organisation
+
+PeerRecognitionService -> Organisation: recognise(Peer giver, Peer receiver, string reason)
+Organisation -> Organisation : can giver recognise receiver?
+return yes
+Organisation -> Recognition : create
+return Recognition
+return Recognition
+
+PeerRecognitionService -> RecognitionRepository: save(Recognition)
+return ok
+return PeerRecognitionResponse
+
+@enduml

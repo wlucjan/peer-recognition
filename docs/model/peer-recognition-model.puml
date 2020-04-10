@@ -1,0 +1,27 @@
+@startuml
+class Recognition {
+    boost()
+}
+
+class PeerRecognition {
+}
+
+class RecognitionRecognition {
+}
+
+class Organisation {
+    recognise(Peer giver, Peer receiver, string reason)
+}
+
+class Peer {
+    Organisation organisation
+}
+
+Recognition "[boost]" --- Recognition
+Recognition <|-- PeerRecognition 
+Recognition <|-- RecognitionRecognition
+Peer --o Recognition : giver
+Peer --o Recognition : author
+Peer "*" --> "1" Organisation : organisation
+Organisation "[month]" *-> "*" Recognition : recognitions
+@enduml
